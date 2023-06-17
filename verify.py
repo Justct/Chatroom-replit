@@ -5,7 +5,7 @@ import json
 
 app = Flask(__name__)
 
-f = open("info.json", "r")
+f = open("Chatroom-replit/info.json", "r")
 data_ = json.loads(f.read())
 f.close()
 room_name = data_["name"]
