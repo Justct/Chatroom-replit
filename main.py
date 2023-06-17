@@ -3,6 +3,12 @@ import requests
 import json
 import platform
 
+import threading
+def de():
+  os.system(f"python3 Chatroom-replit/api.py 0.0.0.0 8001")
+threading.Thread(target=de).start()
+
+
 room_name = input("Room Name  : ")
 room_url = input("Room URL (https://<replit project name>.<acc name>.repl.co) : ")
 
@@ -25,8 +31,6 @@ def start_server(ip, port):
         else:
             os.system(f"python Chatroom-replit/verify.py {ip} {port}")      
 
-
-    os.system(f"python3 Chatroom-replit/api.py {ip} {port}")
 
 def main():
     start_server("0.0.0.0", 8000)
