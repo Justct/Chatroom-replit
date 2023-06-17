@@ -19,11 +19,7 @@ def P():
 @app.route('/verify/if/it/a/chat/room/of/just/chat', methods=['GET'])
 def verify_chat_room():
     if P():
-        func = request.environ.get('werkzeug.server.shutdown')
-        if func is None:
-            raise RuntimeError('Not running with the Werkzeug Server')
-        func()
-        return "Flask app stopped"
+        quit()
 
     return room_name
 
