@@ -3,7 +3,7 @@ import requests
 import json
 
 room_name = input("Room Name  : ")
-room_url = input("Room URL : ")
+room_url = input("Room URL (https://<replit project name>.<acc name>.repl.co) : ")
 
 f = open("info.json","w")
 f.write(json.dumps({"name":room_name, "url" : room_url}))
