@@ -27,7 +27,7 @@ async def chat(websocket, path):
         return
 
     # Check maximum connections per IP
-    client_ip = websocket.remote_address[0]
+    client_ip = websocket.request_headers["X-Forwarded-For"]
     ip_connections.setdefault(client_ip, 0)
     if ip_connections[client_ip] >= MAX_CONNECTIONS_PER_IP:
         await websocket.close()
