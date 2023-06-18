@@ -34,6 +34,8 @@ def start_server(ip, port):
 
 def main():
     start_server("0.0.0.0", 8000)
+    while True:
+      pass
    
 if __name__ == "__main__":
     main()
